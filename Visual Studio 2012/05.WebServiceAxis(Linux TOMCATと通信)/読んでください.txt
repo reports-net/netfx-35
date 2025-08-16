@@ -1,0 +1,6 @@
+WebServiceSample.ZIP圧縮ファイルには、
+axis WEBサービスのクラスの
+各テストプログラムのメソッドが入っています。
+
+WebServiceSample.ZIP を解凍後、そのフォルダをEclipse で指定すれば、
+そのまま、Eclipse で、読み込むことができます。

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.pao.ac:8080/axis/Sample.jws" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.pao.ac:8080/axis/Sample.jws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="getPrintDataResponse">
+    <wsdl:part name="getPrintDataReturn" type="s:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="getMitsumoriResponse">
+    <wsdl:part name="getMitsumoriReturn" type="s:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="getAddressListResponse">
+    <wsdl:part name="getAddressListReturn" type="s:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="getPrintDataRequest" />
+  <wsdl:message name="getKoukokuRequest" />
+  <wsdl:message name="getAddressListRequest" />
+  <wsdl:message name="getMitsumoriRequest" />
+  <wsdl:message name="getBaisuuResponse">
+    <wsdl:part name="getBaisuuReturn" type="s:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="getKoukokuResponse">
+    <wsdl:part name="getKoukokuReturn" type="s:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="getBaisuuRequest" />
+  <wsdl:portType name="Sample">
+    <wsdl:operation name="getPrintData">
+      <wsdl:input name="getPrintDataRequest" message="tns:getPrintDataRequest" />
+      <wsdl:output name="getPrintDataResponse" message="tns:getPrintDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBaisuu">
+      <wsdl:input name="getBaisuuRequest" message="tns:getBaisuuRequest" />
+      <wsdl:output name="getBaisuuResponse" message="tns:getBaisuuResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAddressList">
+      <wsdl:input name="getAddressListRequest" message="tns:getAddressListRequest" />
+      <wsdl:output name="getAddressListResponse" message="tns:getAddressListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMitsumori">
+      <wsdl:input name="getMitsumoriRequest" message="tns:getMitsumoriRequest" />
+      <wsdl:output name="getMitsumoriResponse" message="tns:getMitsumoriResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getKoukoku">
+      <wsdl:input name="getKoukokuRequest" message="tns:getKoukokuRequest" />
+      <wsdl:output name="getKoukokuResponse" message="tns:getKoukokuResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SampleSoapBinding" type="tns:Sample">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getPrintData">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getPrintDataRequest">
+        <soap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getPrintDataResponse">
+        <soap:body use="encoded" namespace="http://www.pao.ac:8080/axis/Sample.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBaisuu">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getBaisuuRequest">
+        <soap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getBaisuuResponse">
+        <soap:body use="encoded" namespace="http://www.pao.ac:8080/axis/Sample.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAddressList">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getAddressListRequest">
+        <soap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAddressListResponse">
+        <soap:body use="encoded" namespace="http://www.pao.ac:8080/axis/Sample.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMitsumori">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getMitsumoriRequest">
+        <soap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getMitsumoriResponse">
+        <soap:body use="encoded" namespace="http://www.pao.ac:8080/axis/Sample.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKoukoku">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getKoukokuRequest">
+        <soap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getKoukokuResponse">
+        <soap:body use="encoded" namespace="http://www.pao.ac:8080/axis/Sample.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SampleService">
+    <wsdl:port name="Sample" binding="tns:SampleSoapBinding">
+      <soap:address location="http://www.pao.ac:8080/axis/Sample.jws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

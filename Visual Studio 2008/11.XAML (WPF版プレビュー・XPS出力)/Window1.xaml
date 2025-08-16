@@ -1,0 +1,17 @@
+<Window x:Class="Sample.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="780
+        " Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,-301,-722">
+        <Button Content="実行" HorizontalAlignment="Left" Height="77" Margin="831,12,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
+        <DocumentViewer x:Name="documentViewer" HorizontalAlignment="Left" Height="611" Margin="46,110,0,0" VerticalAlignment="Top" Width="887"/>
+        <RadioButton x:Name="radPreview" Content="プレビュー" HorizontalAlignment="Left" Height="28" Margin="55,56,0,0" VerticalAlignment="Top" Width="117" FontSize="16"/>
+        <RadioButton x:Name="radPrint" Content="印刷" HorizontalAlignment="Left" Height="28" Margin="272,56,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.242,3.615" FontSize="16"/>
+        <RadioButton x:Name="radXPS" Content="XPS出力" HorizontalAlignment="Left" Height="28" Margin="272,23,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.242,3.615" FontSize="16"/>
+        <RadioButton x:Name="radPDF" Content="PDF出力" HorizontalAlignment="Left" Height="28" Margin="443,56,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.242,3.615" FontSize="16"/>
+        <RadioButton x:Name="radSVG" Content="SVG出力" HorizontalAlignment="Left" Height="28" Margin="618,56,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.242,3.615" FontSize="16"/>
+        <RadioButton x:Name="radPreview_WPF" Content="WPF版プレビュー" HorizontalAlignment="Left" Height="28" Margin="55,23,0,0" VerticalAlignment="Top" Width="164" RenderTransformOrigin="1.242,3.615" FontSize="16" IsChecked="True"/>
+
+    </Grid>
+</Window>

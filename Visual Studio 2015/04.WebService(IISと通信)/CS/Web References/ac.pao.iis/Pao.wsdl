@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="get帳票データ">
+        <s:complexType />
+      </s:element>
+      <s:element name="get帳票データResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get帳票データResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="get帳票データSoapIn">
+    <wsdl:part name="parameters" element="tns:get帳票データ" />
+  </wsdl:message>
+  <wsdl:message name="get帳票データSoapOut">
+    <wsdl:part name="parameters" element="tns:get帳票データResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebTestSoap">
+    <wsdl:operation name="get帳票データ">
+      <wsdl:input message="tns:get帳票データSoapIn" />
+      <wsdl:output message="tns:get帳票データSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebTestSoap" type="tns:WebTestSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get帳票データ">
+      <soap:operation soapAction="http://tempuri.org/get帳票データ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebTestSoap12" type="tns:WebTestSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get帳票データ">
+      <soap12:operation soapAction="http://tempuri.org/get帳票データ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebTest">
+    <wsdl:port name="WebTestSoap" binding="tns:WebTestSoap">
+      <soap:address location="https://ubuntu.pao.ac/.net/pao/Reports3.NET/Pao.Reports.WebTest.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebTestSoap12" binding="tns:WebTestSoap12">
+      <soap12:address location="https://ubuntu.pao.ac/.net/pao/Reports3.NET/Pao.Reports.WebTest.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

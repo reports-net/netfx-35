@@ -1,0 +1,26 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Sample", "Sample.vbproj", "{DFC16EBD-6201-44EC-B508-45A8B5D9336C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72B81813-913E-4626-95E3-8340031C9B7B}"
+	ProjectSection(SolutionItems) = preProject
+		..\読んでください.txt = ..\読んでください.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFC16EBD-6201-44EC-B508-45A8B5D9336C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC16EBD-6201-44EC-B508-45A8B5D9336C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC16EBD-6201-44EC-B508-45A8B5D9336C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC16EBD-6201-44EC-B508-45A8B5D9336C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
