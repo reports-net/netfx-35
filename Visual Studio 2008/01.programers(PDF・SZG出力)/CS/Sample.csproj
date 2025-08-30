@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
@@ -70,7 +70,10 @@
   <ItemGroup>
     <Reference Include="Pao.Reports">
       <Name>Pao.Reports</Name>
-      <HintPath>..\..\..\lib\Pao.Reports.dll</HintPath>
+      
+      <HintPath Condition="Exists('$(ProgramFiles) (x86)')">$(ProgramFiles) (x86)\Pao@Office\Reports.net\Pao.Reports.dll</HintPath>
+      
+      <AssemblyFolderKey>hkcu\dn\pao%40office</AssemblyFolderKey>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
