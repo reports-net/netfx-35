@@ -57,10 +57,14 @@
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314,42353,42354,42355</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Pao.Reports">
+    <Reference Include="Pao.Reports" Condition="!Exists('$(ProgramFiles) (x86)\Pao@Office\Reports.net\Pao.Reports.dll') And Exists('$(SolutionDir)..\..\lib\Pao.Reports.dll') ">
+  <Name>Pao.Reports</Name>
+  <HintPath>$(SolutionDir)..\..\lib\Pao.Reports.dll</HintPath>
+</Reference>
+<Reference Include="Pao.Reports" Condition="Exists('$(ProgramFiles) (x86)\Pao@Office\Reports.net\Pao.Reports.dll')">
       <Name>Pao.Reports</Name>
       <HintPath Condition="Exists('$(ProgramFiles) (x86)')">$(ProgramFiles) (x86)\Pao@Office\Reports.net\Pao.Reports.dll</HintPath>
-      <AssemblyFolderKey>hkcu\dn\pao%40office</AssemblyFolderKey>
+      
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
