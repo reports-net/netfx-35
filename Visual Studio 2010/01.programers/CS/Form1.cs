@@ -343,8 +343,9 @@ namespace Pao.Reports.Sample
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    paoRep.SaveSVGFile(saveFileDialog.FileName); //SVGデータの保存
-                    if (MessageBox.Show(this, "ブラウザで表示しますか？\n表示する場合、SVGプラグインが必要です。", "SVG の表示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    string svgHtml = paoRep.GetSvg();
+                    System.IO.File.WriteAllText(saveFileDialog.FileName, svgHtml, System.Text.Encoding.UTF8);
+                    if (MessageBox.Show(this, "ブラウザで表示しますか？", "SVG の表示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo(saveFileDialog.FileName);
                         startInfo.UseShellExecute = true;

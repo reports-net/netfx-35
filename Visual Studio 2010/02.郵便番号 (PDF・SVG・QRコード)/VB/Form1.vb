@@ -341,10 +341,11 @@ Public Class Form1
 
             If saveFileDialog.ShowDialog() = DialogResult.OK Then
 
-                'SVGデータの保存
-                paoRep.SaveSVGFile(saveFileDialog.FileName)
+                ' インラインSVG埋め込みHTML文字列を取得し、ファイルに保存
+                Dim svgHtml As String = paoRep.GetSvg()
+                System.IO.File.WriteAllText(saveFileDialog.FileName, svgHtml, System.Text.Encoding.UTF8)
 
-                If (MessageBox.Show(Me, "ブラウザで表示しますか？" & vbCrLf & "表示する場合、SVGプラグインが必要です。", "SVG / SVGZ の表示", MessageBoxButtons.YesNo) = DialogResult.Yes) Then
+                If (MessageBox.Show(Me, "ブラウザで表示しますか？", "SVG の表示", MessageBoxButtons.YesNo) = DialogResult.Yes) Then
                     ExecFile(saveFileDialog.FileName)
                 End If
 

@@ -1,4 +1,4 @@
-Imports Pao.Reports
+﻿Imports Pao.Reports
 
 
 Namespace Sample
@@ -164,7 +164,9 @@ Namespace Sample
 
                 ' Process save file dialog box results
                 If result = True Then
-                    paoRep.SaveSVGFile(dlg.FileName) 'SVG保存
+                    ' インラインSVG埋め込みHTML文字列を取得し、ファイルに保存
+                    Dim svgHtml As String = paoRep.GetSvg()
+                    System.IO.File.WriteAllText(dlg.FileName, svgHtml, System.Text.Encoding.UTF8)
 
                     If MessageBox.Show(Me, "ブラウザで表示しますか？" & vbCrLf & "表示する場合、SVGプラグインが必要です。" _
                                        , "SVG / SVGZ の表示", MessageBoxButton.YesNo) = MessageBoxResult.Yes Then
